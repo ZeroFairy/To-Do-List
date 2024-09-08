@@ -1,68 +1,42 @@
-# CodeIgniter 4 Application Starter
+# Preview To-Do List
+Sistem simple To-Do List ini dibuat dengan menggunakan framework CodeIgniter4. Untuk bahasa program yang digunakan adalah HTML, PHP, dan JS. Juga menggunakan BootStarp5 untuk mendesain tampilan sehingga lebih menarik. 
 
-## What is CodeIgniter?
+Sistem To-Do List terdiri dari: 
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 1. Login
+![Login](https://github.com/user-attachments/assets/d59276c0-baac-4b6a-b62f-54e475f9b19d)
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Page ini digunakan untuk login pengguna, sehingga dapat membedakan antara pengguna satu dengan pengguna yang lainnya. Dengan begini maka, daftar kegiatan yang ditampilkan pada halaman Main Page adalah daftar kegiatan dari pengguna yang melakukan login.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## 2. Sign Up
+![image](https://github.com/user-attachments/assets/a89019e3-ddb8-4a0c-bd9a-25da0fb014f2)
 
-## Installation & updates
+Page ini digunakan agar pengguna baru (yang belum memiliki akun) dapat melakukan Sign Up, sehingga kemudian pengguna baru dapat melakukan Login dan masuk ke dalam Main Page.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 3. Main Page
+![image](https://github.com/user-attachments/assets/4603ee3e-d4d9-4c6f-9810-ee7551bea451)
 
-## Setup
+Akan mengambil data yang sebelumnya telah tersimpan di dalam database. Kemudian menampilkan daftar kegiatan yang belum selesai pada "Daftar Kegiatan Belum Selesai". Sedangkan, untuk daftar kegiatan yang telah selesai akan ditampilkan pada "Daftar Kegiatan Selesai".
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+  ### Menambahkan Kegiatan
+  ![image](https://github.com/user-attachments/assets/0c6543d2-eff4-4500-8ca6-d9a853626e75)
 
-## Important Change with index.php
+  Untuk menambahkan kegiatan baru ke dalam daftar To-Do List. Kemudian, akan menampilkan kegiatan yang baru ditambahkan pada "Daftar Kegiatan Belum Selesai".  
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+  ### Menyelesaikan Kegiatan
+  ![image](https://github.com/user-attachments/assets/1fd57273-e6d6-4a13-b965-5e67b6f18aa7)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+  Digunakan untuk menandakan kegiatan tersebut telah diselesaikan. Selain itu, kegiatan yang telah selesai kemudian akan ditampilkan pada "Daftar Kegiatan Selesai", namun kegiatan yang telah selesai tidak akan terhapus dan akan ditampilkan dengan ~~tercoret~~ .
 
-**Please** read the user guide for a better explanation of how CI4 works!
+  ### Menghapus Kegiatan
+  ![image](https://github.com/user-attachments/assets/3b25844e-db59-41e2-b6fb-5857bd1cc76f)
 
-## Repository Management
+  Digunakan untuk menghapus kegiatan yang telah berada di dalam daftar. Baik digunakan untuk "Daftar   Kegiatan Belum Selesai" maupun "Daftar Kegiatan Selesai".
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Terima Kasih telah mengunjungi halaman ini.
+Apabila terdapat saran atau pendapat dapat melakukan comment.
 
-## Server Requirements
 
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
